@@ -22,18 +22,18 @@
 * 临时表空间：数据库中间执行过程存放的内容
 * UNDO表空间：保存事务所修改数据的旧值。
 
-    --创建表空间：
+    创建表空间：
     create [temporary] tablespace tablespace_name tempfile|datafile 'xx.dbf' size xx
     create tablespace test1_tablespace datafile 'test1file.dbf' size 10m;
     create temporary tablespace temptest1_tablespace tempfile 'tempfile1.dbf' size 10m;
-    --修改表空间：
+    修改表空间：
         修改表空间状态
             设置联机或者脱机状态：alter tablespace tablespace_name online|offline
             设置只读或者可读写状态：alter tablespace tablespace_name read only|read write
         修改数据文件：
             增加数据文件：alter tablespace tablespace_name add datafile 'xx.dbf' size xx;
             删除数据文件：alter tablespace tablespace_name drop datafile 'filename.dbf';
-    --删除表空间：
+    删除表空间：
         drop tablespace tablespace_name [including contents]
 
 ## 表与约束
@@ -57,7 +57,7 @@
     创建表：create table table_name (column_name datatype, ……)
     修改表：
         添加字段：alter table table_name add column_name datatype;
-        更改字段数据类型：alter table table_name add column_name datatype;
+        更改字段数据类型：alter table table_name modify column_name datatype;
         删除字段：alter table table_name add column_name datatype;
         修改字段名：alter table table_name add column_name datatype;
         修改表名：alter table table_name add column_name datatype;
