@@ -40,8 +40,8 @@
 
 ## 表与约束
 ### 创建和管理表
-认识表：存储在表空间内，是基本存储单位，二维结构（行和列）。
-数据类型：
+* 认识表：存储在表空间内，是基本存储单位，二维结构（行和列）。
+* 数据类型：
     - 字符型：
         + CHAR(n)、NCHAR(n)：固定长度类型，CHAR最长是2000个字符，NCHAR最长1000个字符
         + VARCHAR2(n)、NVARCHAR2(n)：可变长度类型，VARCHAR2最长是4000个字符，、NVARCHAR2最长2000个字符
@@ -54,14 +54,15 @@
     - 其他类型
         + BLOB：4G数据，二进制数据
         + CLOB：4G数据，字符串类型
+        
 管理表：
     
     创建表：create table table_name (column_name datatype, ……)
     修改表：
         添加字段：alter table table_name add column_name datatype;
         更改字段数据类型：alter table table_name modify column_name datatype;
-        删除字段：alter table table_name add column_name datatype;
-        修改字段名：alter table table_name add column_name datatype;
+        删除字段：alter table table_name drop column column_name;
+        修改字段名：alter table table_name rename column column_name to new_column_name;
         修改表名：alter table table_name add column_name datatype;
 ### 约束
 
