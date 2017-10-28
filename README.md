@@ -125,4 +125,26 @@
             禁用：disable|enable constraint constraint_name;
             删除：drop constraint constraint_name;
 
+总结：
+* 主键约束每张表中只能有一个，但可以由多个字段构成
+* 外键约束是唯一一个涉及两张表的关系
+* 创建表时，只有非空约束只能在列级设置，不能在表级设置，并且，非空约束是没有名字的
+* 修改表时，非空约束的语法跟其他约束不一样，是修改表字段的语句。
+* 更改约束的名称，非空约束不能改名。如果不知道约束名称，可以通过user_constraints数据字典查看
+* 删除约束：非空约束是用修改表字段的语法，其他约束都有禁用跟删除两种方式。删除主键约束可以使用drop primary key 因为主键约束是特殊的，一个表只有一个。
+
 ## 查询语句
+    基本查询语句：select [distinct] column_name1,...|* from table_name [where conditions]  (distinct 不显示重复行)
+    给字段设置别名：select column_name as new_name,... from table_name;
+    逻辑运算符：not and or
+    模糊查询：
+        like
+        _ ：一个_只能代表一个字符
+        % ：可以代表0到多个任意字符
+    范围查询：
+        between...and
+        in/not in
+    对查询结果排序：select ... from ... [where ...] order by column1 desc/asc,...
+    case ... when：
+        case column_name when value1 then result1,... [else result] end
+        case when column_name = value1 then result1,...[else result] end
