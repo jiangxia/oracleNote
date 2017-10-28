@@ -63,7 +63,20 @@
         更改字段数据类型：alter table table_name modify column_name datatype;
         删除字段：alter table table_name drop column column_name;
         修改字段名：alter table table_name rename column column_name to new_column_name;
-        修改表名：alter table table_name add column_name datatype;
+        修改表名：rename table_name to new_table_name;
+    删除表：
+        截断数据：truncate table table_name;
+        删除表：drop table table_name;
+
+管理表中的数据：
+    
+    添加数据：insert into table_name (column1,column2,……) values (value1,value2,……);
+    复制数据：
+        在创建表时复制：create table table_new as select column,...|* from table_old;
+        在添加时复制：insert into table_new [(column1,...)] select column1,...|* from table_old;
+    修改数据：
+        update table_name set column1 = value1,... [where conditions]
+    删除数据：
 ### 约束
 
 
