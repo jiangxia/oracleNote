@@ -22,6 +22,8 @@
 * 临时表空间：数据库中间执行过程存放的内容
 * UNDO表空间：保存事务所修改数据的旧值。
 
+表空间操作
+
     创建表空间：
     create [temporary] tablespace tablespace_name tempfile|datafile 'xx.dbf' size xx
     create tablespace test1_tablespace datafile 'test1file.dbf' size 10m;
