@@ -77,7 +77,52 @@
     修改数据：
         update table_name set column1 = value1,... [where conditions]
     删除数据：
+        delete from table_name [where conditions]
 ### 约束
+约束的作用：定义规则、确保完整性（精确性跟可靠性）
 
+    非空约束
+        创建表：create table table_name (column_name datatype not null,...);
+        修改表：alter table table_name modify column_name datatype not null;
+        修改表时去掉非空约束：alter table table_name modify column_name datatype  null;
+    主键约束（非空、唯一，可以由多个字段构成，称为联合主键或复合主键）
+        创建表：
+            列级：create table table_name(column_name datatype primary key,...)
+            表级：constraint constraint_name primary key (column_name1,...)
+        修改表：
+            add constraint constraint_name primary key(column_name1,...);
+        更改约束名称：
+            rename constraint old_name to new_name;
+        删除约束：
+            禁用：disable|enable constraint constraint_name;
+            删除：drop constraint constraint_name;
+                 drop primary key[cascade];
+    外键约束：
+        创建表：
+            列级：create table table1(column_name datatype references table2(column_name),...);
+            表级：constraint constraint_name foreign key(column_name) references table_name(column_name) [on delete cascade];
+        修改表：
+            add constraint constraint_name foreign key(column_name) references table_name(column_name) [on delete cascade];
+        删除约束：
+            禁用：disable|enable constraint constraint_name;
+            删除：drop constraint constraint_name;
+    唯一约束：
+        创建表：
+            列级：create table table_name (column_name datatype unique,...);
+            表级：constraint constraint_name unique(column_name);
+        修改表：
+            add constraint constraint_name unique(column_name);
+        删除约束：
+            禁用：disable|enable constraint constraint_name;
+            删除：drop constraint constraint_name;
+    检查约束：
+        创建表：
+            列级：create table table_name (column_name datatype check(expressions),...);
+            表级：constraint constraint_name check(expressions);
+        修改表：
+            add constraint constraint_name check(expressions);
+        删除约束：
+            禁用：disable|enable constraint constraint_name;
+            删除：drop constraint constraint_name;
 
 ## 查询语句
